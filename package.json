@@ -1,0 +1,13 @@
+{
+  "name":"Chatling",
+  "version":"0.0.3",
+  "author":"James Kohli",
+  "dependencies": {
+  	"socket.io": "0.9.16",
+  	"express": "3.*",
+  	"jade": "*"
+  	  },
+  "scripts": {
+  	"start": "node server.js"
+  }
+}
