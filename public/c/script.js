@@ -13,17 +13,6 @@ function sentMessage() {
    }
 }
 
-function setPseudo() {
-   if ($("#pseudoInput").val() != "")
-   {
-      socket.emit('setPseudo', $("#pseudoInput").val());
-      $('#chatControls').show();
-      $('#pseudoInput').hide();
-      $('#pseudoSet').hide();
-	  $('#pseudoRow').hide();
-   }
-}
-
 socket.on('message', function(data) {
    addMessage(data['message'], data['pseudo']);
 });
@@ -34,7 +23,6 @@ socket.on('nbUsers', function(msg) {
 });
 
 $(function() {
-   $("#chatControls").hide();
-   $("#pseudoSet").click(function() {setPseudo()});
    $("#submit").click(function() {sentMessage();});
+   socket.emit('subscribe', {room : chatId});
 });

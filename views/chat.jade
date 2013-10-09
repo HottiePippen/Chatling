@@ -4,12 +4,19 @@ html
 		title Chatling
 		script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js')
 		script(src="/socket.io/socket.io.js")
+		script
+			var chatId = !{JSON.stringify(id)};
 		script(src="script.js")
 		meta(charset="utf-8")
 	body
 		div.container
 			header	
 				h1 
-					a#titleLink Welcome to Chatling!
-			button.btn-large#spawnChatling
-				b +Chatling
+					a#titleLink Chatling
+			p.lead There are 
+				span#nbUsers
+				|  connected user(s)
+			div#chatEntries
+			div#chatControls
+				input(type='text')#messageInput
+				button.btn#submit Send
